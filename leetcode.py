@@ -27,6 +27,11 @@ class ListNode:
         self.next = None
 
 
+class LargeNumberKey(str):
+    def __lt__(self, other):
+        return self + other > other + self
+
+
 class Solution:
     def __init__(self):
         self._answer = float("inf")
@@ -55,4 +60,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.numDecodings("11106"))
+    print(solution.trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
