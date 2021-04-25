@@ -1,5 +1,3 @@
-import sys
-from collections import Counter
 from typing import List
 
 
@@ -60,4 +58,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
+    print(solution.merge(nums1=[0, 0, 0], m=0, nums2=[4, 5, 6], n=3))
