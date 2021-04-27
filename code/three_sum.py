@@ -38,3 +38,46 @@ class Solution:
                     k -= 1  # 同理， 最后把k再向前挪一个位置
 
         return result
+
+    def threeSum_2nd(self, nums: List[int]) -> List[List[int]]:
+        """
+        三数之和
+        给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
+        注意：答案中不可以包含重复的三元组。
+
+        :param nums:
+        :return:
+        """
+        result = []
+        if len(nums) < 3:
+            return result
+
+        nums.sort()
+        for i in range(len(nums) - 2):
+            if nums[i] > 0:
+                break
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+
+            j = i + 1
+            k = len(nums) - 1
+            while j < k:
+                current_sum = nums[i] + nums[j] + nums[k]
+                if current_sum == 0:
+                    result.append([nums[i], nums[j], nums[k]])
+                    while j < k and nums[j + 1] == nums[j]:
+                        j += 1
+                    j += 1
+                    while j < k and nums[k - 1] == nums[k]:
+                        k -= 1
+                    k -= 1
+                elif current_sum < 0:
+                    while j < k and nums[j + 1] == nums[j]:
+                        j += 1
+                    j += 1
+                else:
+                    while j < k and nums[k - 1] == nums[k]:
+                        k -= 1
+                    k -= 1
+
+        return result

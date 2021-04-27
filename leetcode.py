@@ -56,8 +56,6 @@ class Solution:
         return self._answer if self._answer != float("inf") else -1
 
 
-
-
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.fourSumCount([1,2],[-2,-1],[-1,2],[0,2]))
+    print(solution.threeSum([-1, 0, 1, 2, -1, -4]))
