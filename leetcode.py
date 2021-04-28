@@ -1,3 +1,4 @@
+import sys
 from typing import List
 
 
@@ -55,7 +56,41 @@ class Solution:
         self._coin_change(coins, amount, 0, 0)
         return self._answer if self._answer != float("inf") else -1
 
+    def minCoins(self, coins, amount):
+        # coins: 硬币的面值
+        # amount:想换取的纸钞面值
+
+        # table[i] 存储换取面值为i的纸币，需要用到的最少量的硬币数
+        table = [0 for i in range(amount + 1)]
+
+        # Base case
+        table[0] = 0
+
+        # 初始化
+        for i in range(1, amount + 1):
+            table[i] = sys.maxsize
+
+            # 对于每一种价值i来计算，最少用多少硬币可以换取？
+        for i in range(1, amount + 1):
+
+            # Go through all coins smaller than i
+            for j in range(len(coins)):
+                if coins[j] <= i:
+                    sub_res = table[i - coins[j]]
+                    if sub_res != sys.maxsize and sub_res + 1 < table[i]:
+                        table[i] = sub_res + 1
+        return table[amount]
+
 
 if __name__ == '__main__':
+    root = TreeNode(-10)
+    node_1 = TreeNode(9)
+    node_2 = TreeNode(20)
+    node_3 = TreeNode(15)
+    node_4 = TreeNode(7)
+    root.left = node_1
+    root.right = node_2
+    node_2.left = node_3
+    node_2.right = node_4
     solution = Solution()
-    print(solution.threeSum([-1, 0, 1, 2, -1, -4]))
+    print(solution.maxPathSum(root))
