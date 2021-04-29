@@ -83,14 +83,5 @@ class Solution:
 
 
 if __name__ == '__main__':
-    root = TreeNode(-10)
-    node_1 = TreeNode(9)
-    node_2 = TreeNode(20)
-    node_3 = TreeNode(15)
-    node_4 = TreeNode(7)
-    root.left = node_1
-    root.right = node_2
-    node_2.left = node_3
-    node_2.right = node_4
     solution = Solution()
-    print(solution.maxPathSum(root))
+    print(solution.subsets([1, 2, 3]))
