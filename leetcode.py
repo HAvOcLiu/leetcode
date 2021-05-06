@@ -84,4 +84,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.maxProfit([7, 6, 4, 3, 1]))
+    print(solution.myAtoi("-91283472332"))
