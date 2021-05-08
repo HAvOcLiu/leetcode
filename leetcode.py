@@ -1,3 +1,4 @@
+import math
 import sys
 from typing import List
 
@@ -84,4 +85,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.kthSmallest([[1, 5, 9], [10, 11, 13], [12, 13, 15]], 8))
+    print(solution.numSquares(120))
