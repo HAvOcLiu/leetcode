@@ -85,4 +85,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.numSquares(120))
+    print(solution.isAnagram(s="rat", t="car"))
