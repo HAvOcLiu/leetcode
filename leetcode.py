@@ -62,7 +62,7 @@ class Solution:
         # amount:想换取的纸钞面值
 
         # table[i] 存储换取面值为i的纸币，需要用到的最少量的硬币数
-        table = [0 for i in range(amount + 1)]
+        table = [0 for _ in range(amount + 1)]
 
         # Base case
         table[0] = 0
@@ -85,4 +85,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.isAnagram(s="rat", t="car"))
+    print(solution.least_point([[1, 3], [2, 4], [0, 5], [6, 7]]))
