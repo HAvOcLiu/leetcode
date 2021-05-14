@@ -85,4 +85,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.least_point([[1, 3], [2, 4], [0, 5], [6, 7]]))
+    print(solution.generateParenthesis(3))
