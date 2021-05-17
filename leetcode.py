@@ -85,4 +85,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.generateParenthesis(3))
+    print(solution.maxProduct([5, 6, -3, 4, -3, 0, 1]))
