@@ -85,4 +85,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.maxProduct([5, 6, -3, 4, -3, 0, 1]))
+    print(solution.wordBreak(s="leetcode", wordDict=["leet", "code"]))
